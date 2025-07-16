@@ -2,6 +2,11 @@ export const formatDate = (dateString) => {
     const date = new Date(dateString);
     const now = new Date();
     const diffInHours = (now - date) / (1000 * 60 * 60);
+
+    if (isNaN(date.getTime())) {
+        return "Date invalide"
+      }
+      
   
     if (diffInHours < 1) {
       return 'À l\'instant';
@@ -17,14 +22,18 @@ export const formatDate = (dateString) => {
     }
   };
   
-  export const filterTodos = (todos, filter) => {
+  export function filterTodos(todos, filter) {
+    if (!Array.isArray(todos)) return []
+  
     switch (filter) {
-      case 'active':
-        return todos.filter(todo => !todo.completed);
-      case 'completed':
-        return todos.filter(todo => todo.completed);
+      case "all":
+        return todos 
+      case "active":
+        return todos.filter(todo => !todo.completed)
+      case "completed":
+        return todos.filter(todo => todo.completed)
       default:
-        return todos;
+        return []
     }
-  };
+  }
   
