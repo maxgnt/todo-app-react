@@ -1,0 +1,107 @@
+.todoItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    background-color: white;
+    transition: all 0.2s ease;
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  .todoItem:hover {
+    border-color: #007bff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .completed {
+    background-color: #f8f9fa;
+    opacity: 0.7;
+  }
+  
+  .content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 0.75rem;
+  }
+  
+  .toggleButton {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .toggleButton:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+  }
+  
+  .textContent {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .text {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  .completed .text {
+    text-decoration: line-through;
+    color: #6c757d;
+  }
+  
+  .date {
+    font-size: 0.75rem;
+    color: #6c757d;
+    margin-top: 0.25rem;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .editButton,
+  .deleteButton {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .editButton:hover {
+    background-color: rgba(255, 193, 7, 0.2);
+  }
+  
+  .editButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .deleteButton:hover {
+    background-color: rgba(220, 53, 69, 0.2);
+  }
+  
+  /* Animation d'apparition */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
