@@ -17,7 +17,8 @@ function TodoItem({ todo, onToggle, onDelete, onEdit }) {
         <button
           onClick={() => onToggle(todo.id)}
           className={styles.toggleButton}
-          title={todo.completed ? 'Marquer comme non terminé' : 'Marquer comme terminé'}
+          title={todo.completed ? 'Marquer comme non terminée' : 'Marquer comme terminée'}
+          aria-label={todo.completed ? 'Marquer comme non terminée' : 'Marquer comme terminée'}
         >
           {todo.completed ? '✅' : '⭕'}
         </button>
@@ -33,6 +34,7 @@ function TodoItem({ todo, onToggle, onDelete, onEdit }) {
           onClick={() => onEdit(todo.id)}
           className={styles.editButton}
           title="Modifier"
+          aria-label="Modifier"
           disabled={todo.completed}
         >
           ✏
@@ -42,6 +44,7 @@ function TodoItem({ todo, onToggle, onDelete, onEdit }) {
           onClick={() => onDelete(todo.id)}
           className={styles.deleteButton}
           title="Supprimer"
+          aria-label="Supprimer"
         >
           🗑
         </button>
